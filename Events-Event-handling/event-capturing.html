@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capturing</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        .a{
+            width: 80%;
+            height: 80%;
+            background-color: rgb(75, 13, 13);
+        }
+        .b{
+            width: 80%;
+            height: 80%;
+            background-color: rgb(67, 24, 107);
+        }
+        .c{
+            width: 80%;
+            height: 80%;
+            background-color: rgb(63, 63, 134);
+        }
+
+        /* jab bhi ap click krte ho ya koi bhii event raise krte ho to apka jo event flow he woh do phases me 
+        chalta he  */
+        /* phase 1 => event top level element se neeche ki traf ayega */
+        /* phase 2 => event raised element se parent ki traf jayega */
+        /* aur pehle phase 1 hotii he  */
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="b">
+            <div class="c">
+                <button>click me</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let a = document.querySelector(".a");
+        let b = document.querySelector(".b");
+        let c = document.querySelector(".c");
+        let btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(e){
+            console.log("button clicked");
+            e.stopPropagation()
+        })
+        c.addEventListener("click", function(){
+            console.log("c clicked");
+        })
+        b.addEventListener("click", function(){
+            console.log("b clicked");
+        })
+        a.addEventListener("click", function(){
+            console.log("a clicked");
+        })
+    </script>
+</body>
+</html>
