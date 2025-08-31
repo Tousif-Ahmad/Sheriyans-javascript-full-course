@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timers and Intervals</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* Add a gradient background for the glass effect */
+        background: linear-gradient(
+          135deg,
+          #1f005c,
+          #5b0060,
+          #870160,
+          #ac255e,
+          #ca485c,
+          #e16b5c,
+          #f39060,
+          #ffb56b
+        );
+        font-family: Arial, sans-serif;
+        color: #fff;
+      }
+
+      .glass-box {
+        width: 400px;
+        padding: 30px;
+        text-align: center;
+        border-radius: 15px;
+        /* The core of the glassmorphism effect */
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      h2 {
+        margin-top: 0;
+        font-size: 1.8em;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        font-size: 1em;
+        opacity: 0.8;
+      }
+
+      .progress-bar-base {
+        width: 90%;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        margin: 20px auto;
+        overflow: hidden;
+      }
+
+      .progress-bar-fill {
+        height: 100%;
+        background: #3498db;
+        border-radius: 10px;
+        width: 0%; /* Start with 0% width */
+        /* Add a transition for a smooth animation when the width changes */
+        transition: width 0.5s ease-in-out;
+      }
+
+      .progress-text {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="glass-box">
+        <h2>Downloading File...</h2>
+        <p>file_name.zip</p>
+        <div class="progress-bar-base">
+          <div class="progress-bar-fill"></div>
+        </div>
+        <span class="progress-text">0%</span>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
