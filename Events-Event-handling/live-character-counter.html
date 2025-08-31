@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Character Counter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 30px;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <textarea name="" id="" rows="10" cols="20" placeholder="Write Something"></textarea>
+    <h1>Total Characters : <span>0</span></h1>
+
+    <script>
+        const span = document.querySelector("span")
+        const text = document.querySelector("textarea");
+        text.addEventListener("input", function(e){
+            span.textContent = text.value.length;
+        })
+    </script>
+</body>
+</html>
