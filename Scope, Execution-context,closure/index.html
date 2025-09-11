@@ -4,19 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scope, Execution Context and closure</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <button id="btn">Click Me</button>
-
-    <script>
-      const button = document.getElementById("btn");
-
-      button.addEventListener("click", function () {
-        console.log(this);
-        // 👉 refers to the button element
-        this.textContent = "Clicked!";
-      });
-    </script>
+    <!-- Toast container -->
+    <!-- <div id="toast-container">
+      This is a toaster Notification!
+    </div> -->
 
     <script src="main.js"></script>
   </body>

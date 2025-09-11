@@ -7,7 +7,7 @@
 // EXECUTION CONTEXT => MEMORY CREATION AND CODE EXECUTION PHASE.
 
 // EXECUTION CONTEXT => js sab se pehle jaise he apka function dekhta he sabse pehle 
-// js banaata he execution context ye ek process he to 2 differnet phases me chlta he ek ka nam he 
+// js banaata he execution context ye ek process he to 2 different phases me chlta he ek ka nam he 
 // memory phase aur doosre ka nam he execution phase.
 
 // function abcd(){
@@ -54,10 +54,12 @@
 // fnc2();
 // fnc2();
 
-//  encapsulation => 
+// jab bhi closure bnta he to uska ek backlink ban jaata he [[enviroment]] woh is me save hota he.
+
+//  encapsulation => is se hum private variables bnate hain.
 
 // function clickLimiter(){
-//     let click = 0;
+//     let click = 0;   /* ye ek private variable he isko hum bahar access nhi kar skte */
 //     return function(){
 //         if (click < 5){
 //             click++;
@@ -76,6 +78,31 @@
 // fnc();
 // fnc();
 // fnc();
+
+// TOASTER CODE 
+function createToaster(){
+    return function(notification){
+        let div = document.createElement("div");
+        div.classList.add("toast-container", "toast", "show");
+        div.textContent = notification;
+        document.body.appendChild(div);
+
+        setTimeout(() => {
+            document.body.removeChild(div)
+        }, 3000);
+    }
+}
+// let toaster = createToaster({
+//     // positionX : "left",
+//     // positionY : "bottom",
+//     // theme : "light",
+//     // duration : 3,
+// })
+// toaster("this is a dummy notication")
+
+let toaster = createToaster();
+toaster("this is dummy toaster");
+
 
 
 // THIS KEYWORD 
